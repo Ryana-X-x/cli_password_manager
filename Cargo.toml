@@ -1,14 +1,21 @@
 [package]
-name = "cli_password_manager"
+name = "cli-password-manager"
 version = "0.1.0"
 edition = "2021"
+description = "A simple CLI password manager with master password security"
+authors = ["Your Name"]
+license = "MIT"
+repository = "https://github.com/yourusername/cli-password-manager"
+
+[[bin]]
+name = "passmgr"
+path = "src/main.rs"
 
 [dependencies]
-clap = { version = "4.0", features = ["derive"] } # For CLI parsing
-rusqlite = { version = "0.28", features = ["bundled"] } # SQLite DB
-argon2 = "0.4" # Secure password hashing
-rpassword = "7.2" # Secure password input
-dotenv = "0.15" # Load environment variables
-lazy_static = "1.4" # Store master password in memory
-dirs = "5.0" # Get system directories
-rand = "0.8" # Generate salts for hashing
+aes-gcm = "0.10"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rpassword = "7.2"
+blake3 = "1.4"
+base64 = "0.21"
