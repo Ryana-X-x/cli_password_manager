@@ -8,7 +8,7 @@ license = "MIT"
 repository = "https://github.com/yourusername/cli-password-manager"
 
 [[bin]]
-name = "passmngr"
+name = "secureme"
 path = "src/main.rs"
 
 [dependencies]
